@@ -11,19 +11,40 @@
 
 > Large size Pathology Image Processing Module
 
-### 
+
 
 ## Install
+
+This package recommends Python 3.5 or later.
 
 ```bash
 pip install git+https://github.com/NEONKID/PLSP.git
 ```
 
+
+
 ## Author
 
-👤 **Neon K.I.D**
+👤 **Kwang Soo Jeong**
 
 * Github: [@NEONKID](https://github.com/NEONKID)
+
+
+
+## 🚀 Usage
+
+Use the **vips** library to read images over 65,000 pixels.
+
+```python
+from PLSP import OSF
+
+path = '.svs'
+oslide = OSF(path)
+```
+
+This code is used in formats supported by **OpenSlide**
+
+
 
 ## 🤝 Contributing
 
