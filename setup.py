@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='PLSP',
@@ -15,6 +15,7 @@ setup(
         'pyvips',
         'czifile'
     ],
+    packages=find_packages(),
     python_requires = '>=3.5',
-    zip_safe=True
+    zip_safe=False
 )
