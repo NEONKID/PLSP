@@ -4,7 +4,7 @@ from czifile import CziFile
 from pyvips import Image
 
 
-class Czi:
+class CZI:
     def __init__(self, path):
         self.filename = path
         self.czi = CziFile(path)
