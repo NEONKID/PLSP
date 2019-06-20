@@ -11,6 +11,7 @@ class OSF:
         self.file = Image.new_from_file(path, access='sequential')
         self.slide = open_slide(filename=self.filename)
 
+    @classmethod
     def getPixel4Thumbnails(self):
         Factors = self.slide.level_downsamples
         [w, h] = self.slide.dimensions
@@ -27,6 +28,7 @@ class OSF:
 
         return region
 
+    @classmethod
     def getPixelArray(self):
         format_to_dtype = {
             'uchar': np.uint8,
@@ -44,6 +46,7 @@ class OSF:
                           dtype=format_to_dtype[self.file.format],
                           shape=[self.file.height, self.file.width, self.file.bands])
 
+    @classmethod
     def cvtStandardImgFormat(self, savePath, fmt, compression=False):
         if fmt.endswith('jpg') and self.slide.dimensions[0] > 65535 and self.slide.dimensions[1] > 65535:
             print('Too Large size for JPEG-2000 format...')
