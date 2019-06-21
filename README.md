@@ -56,7 +56,6 @@ plt.show()
 If you use the **getPixelArray** method to extract pixel data in the form of **numpy**, you can easily see it using Pyplot.
 
 
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/NEONKID/PLSP/issues).
