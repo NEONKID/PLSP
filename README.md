@@ -44,6 +44,16 @@ oslide = OSF(path)
 
 This code is used in formats supported by **OpenSlide**
 
+```python
+import matplotlib.pyplot as plt
+
+im = oslide.getPixelArray()
+
+plt.imshow(im)
+plt.show()
+```
+
+If you use the **getPixelArray** method to extract pixel data in the form of **numpy**, you can easily see it using Pyplot.
 
 
 ## 🤝 Contributing
