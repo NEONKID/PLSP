@@ -5,25 +5,20 @@ from pyvips import Image
 
 
 class CZI:
-    filename = None
-    czi = None
-
     def __init__(self, path):
         self.filename = path
         self.czi = CziFile(path)
 
-    @classmethod
-    def getPixelArray(cls):
-        im = cls.czi.asarray()
+    def getPixelArray(self):
+        im = self.czi.asarray()
 
         print('Image Width: {}'.format(im.shape[-1]))
         print('Image Height: {}'.format(im.shape[-2]))
 
         return im[0, 0, 0,]
 
-    @classmethod
-    def cvtStandardImgFormat(cls, savePath, fmt, compression=False):
-        im_arr = cls.getPixelArray()
+    def cvtStandardImgFormat(self, savePath, fmt, compression=False):
+        im_arr = self.getPixelArray()
 
         if fmt.endswith('jpg') and im_arr[0] > 65535 and im_arr[1] > 65535:
             print('Too Large size for JPEG-2000 format...')
@@ -33,7 +28,7 @@ class CZI:
             print('Too Large size for PNG format...')
             return
 
-        fname = os.path.basename(cls.filename)
+        fname = os.path.basename(self.filename)
         sname = os.path.splitext(fname)[-1]
 
         im = Image.new_from_array(im_arr)
