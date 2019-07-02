@@ -9,7 +9,6 @@ class CZI:
         self.filename = path
         self.czi = CziFile(path)
 
-    @classmethod
     def getPixelArray(self):
         im = self.czi.asarray()
 
@@ -18,7 +17,6 @@ class CZI:
 
         return im[0, 0, 0,]
 
-    @classmethod
     def cvtStandardImgFormat(self, savePath, fmt, compression=False):
         im_arr = self.getPixelArray()
 
