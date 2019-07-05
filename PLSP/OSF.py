@@ -12,12 +12,8 @@ class OSF:
         self.slide = open_slide(filename=self.filename)
 
     def getPixel4Thumbnails(self):
-        Factors = self.slide.level_downsamples
-        [w, h] = self.slide.dimensions
-
         # Image Thumbnails size
-        size_x = int(w * (Factors[0] / Factors[2]))
-        size_y = int(h * (Factors[0] / Factors[2]))
+        [size_x, size_y] = slide.level_dimensions[1]	
 
         # Thumbnails Region
         region = np.array(self.slide.read_region((0, 0), 2, (size_x, size_y)))
